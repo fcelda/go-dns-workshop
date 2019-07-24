@@ -47,8 +47,7 @@ func (srv *MyServer) ServeDNS(w dns.ResponseWriter, query *dns.Msg) {
 
 		// Send response.
 		resp := new(dns.Msg).SetReply(query)
-		resp.Answer = make([]dns.RR, 1)
-		resp.Answer[0] = &txt
+		resp.Answer = append(resp.Answer, &txt)
 		w.WriteMsg(resp)
 		return
 	}
