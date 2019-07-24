@@ -40,7 +40,6 @@ func (srv *MyServer) ServeDNS(w dns.ResponseWriter, query *dns.Msg) {
 		txt.Hdr.Name = question.Name
 		txt.Hdr.Rrtype = question.Qtype
 		txt.Hdr.Class = question.Qclass
-		txt.Hdr.Rrtype = dns.TypeTXT
 		txt.Hdr.Ttl = 60
 
 		// Record data.
